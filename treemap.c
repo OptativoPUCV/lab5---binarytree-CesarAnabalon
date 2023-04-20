@@ -57,11 +57,20 @@ if (x == NULL) return NULL;
         x = x->left;
     }
     return x;
+  
 }
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+ if (tree == NULL || node == NULL) return;
 
+    // Caso 1: Nodo a eliminar es la raíz del árbol
+    if (node == tree->root) {
+        tree->root = NULL;
+        free(node->pair);
+        free(node);
+        return;
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
