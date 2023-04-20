@@ -231,3 +231,22 @@ Thu 20 Apr 2023 09:09:42 PM UTC:
  tests:  8|6
 total_score: 5/70
 b78ab12
+Thu 20 Apr 2023 09:12:14 PM UTC: 
+ treemap.c | 44 +++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 43 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:104:13: error: ‘TreeNode’ has no member named ‘key’
+  104 |         node->key = successor->key;
+      |             ^~
+treemap.c:104:30: error: ‘TreeNode’ has no member named ‘key’
+  104 |         node->key = successor->key;
+      |                              ^~
+treemap.c:105:13: error: ‘TreeNode’ has no member named ‘value’
+  105 |         node->value = successor->value;
+      |             ^~
+treemap.c:105:32: error: ‘TreeNode’ has no member named ‘value’
+  105 |         node->value = successor->value;
+      |                                ^~
+Compilation failed
+40aa9c9
