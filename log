@@ -92,3 +92,20 @@ treemap.c:80:13: error: unused variable ‘nodo’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 9149867
+Thu 20 Apr 2023 07:47:01 PM UTC: 
+ treemap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:81:36: error: expected expression before ‘,’ token
+   81 | int comparacion = tree->lower_than(,key);
+      |                                    ^
+treemap.c:80:13: error: unused variable ‘nodo’ [-Werror=unused-variable]
+   80 |   TreeNode* nodo = tree->root;
+      |             ^~~~
+treemap.c:87:1: error: control reaches end of non-void function [-Werror=return-type]
+   87 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+7db2769
