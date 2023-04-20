@@ -94,13 +94,22 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       nodo = nodo->right;
     }else{
       tree->current = nodo;
-      tree->current = NULL;
       return nodo->pair;
     }
+  else
+      {
+        tree->current = NULL;
+        return NULL;
+      }
+    }
   }
-  tree->current = NULL;
+  
   return NULL;
 }
+
+
+
+
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
