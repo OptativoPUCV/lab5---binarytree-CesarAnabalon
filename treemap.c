@@ -62,41 +62,7 @@ if (x == NULL) return NULL;
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-if (tree == NULL || node == NULL) return;
 
-    // Caso 1: Nodo a eliminar es la raíz del árbol
-    if (node == tree->root) {
-        tree->root = NULL;
-        free(node->pair);
-        free(node);
-        return;
-    }
-
-    // Caso 2: Nodo a eliminar es una hoja
-    if (node->left == NULL && node->right == NULL) {
-        if (node->parent->left == node) {
-            node->parent->left = NULL;
-        } else {
-            node->parent->right = NULL;
-        }
-        free(node->pair);
-        free(node);
-        return;
-    }
-
-    // Caso 3: Nodo a eliminar tiene un solo hijo
-    if (node->left == NULL || node->right == NULL) {
-        TreeNode* child = node->left == NULL ? node->right : node->left;
-        child->parent = node->parent;
-        if (node->parent->left == node) {
-            node->parent->left = child;
-        } else {
-            node->parent->right = child;
-        }
-        free(node->pair);
-        free(node);
-        return;
-    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
