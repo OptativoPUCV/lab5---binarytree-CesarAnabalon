@@ -40,7 +40,8 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2))
 {
   TreeMap * map = (TreeMap*) malloc (sizeof(TreeMap));
   if(map == NULL) return NULL;
-
+  map->root = NULL;
+  map->current = NULL;
   map ->lower_than = lower_than; 
   return map;
 }
@@ -80,24 +81,22 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   }
   TreeNode* nodo = tree->root;
   int comparacion = tree->lower_than(key,nodo->pair->key);
-  while(nodo != NULL)
-    {
-      if(comparacion < 0)
-      {
-        nodo = nodo->left;
-      }
-      else if(comparacion > 0)
-      {
-        nodo = nodo->right;
-      }else{
-        tree->current = nodo;
-        return nodo->pair;
-      }
-      
-    }
   
-    
-
+  while(nodo != NULL)
+  {
+    if(comparacion < 0)
+    {
+      nodo = nodo->left;
+    }
+    else if(comparacion > 0)
+    {
+      nodo = nodo->right;
+    }else{
+      tree->current = nodo;
+      return nodo->pair;
+    }
+  }
+  
   return NULL;
 }
 
