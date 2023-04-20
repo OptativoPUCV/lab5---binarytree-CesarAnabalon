@@ -44,3 +44,15 @@ Thu 20 Apr 2023 07:09:50 PM UTC:
  tests:  4|7
 total_score: 5/70
 5c6c54b
+Thu 20 Apr 2023 07:39:21 PM UTC: 
+ treemap.c | 33 ++++++++++++++++++++++++++++++---
+ 1 file changed, 30 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c:96:5: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   96 | Nota: En este caso, se asume que la estructura Pair ya ha sido definida en algún otro lugar del código.
+      |     ^
+treemap.c:104:1: error: expected identifier or ‘(’ before ‘}’ token
+  104 | }
+      | ^
+Compilation failed
+71aca5a

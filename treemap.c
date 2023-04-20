@@ -36,15 +36,13 @@ TreeNode * createTreeNode(void* key, void * value) {
     return new;
 }
 
-TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
-
+TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) 
+{
   TreeMap * map = (TreeMap*) malloc (sizeof(TreeMap));
   if(map == NULL) return NULL;
 
-  map ->lower_than = lower_than;
-  
-  
-    return map;
+  map ->lower_than = lower_than; 
+  return map;
 }
 
 
@@ -74,7 +72,34 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 
-Pair * searchTreeMap(TreeMap * tree, void* key) {
+Pair * searchTreeMap(TreeMap * tree, void* key) 
+{
+  if (tree == NULL || tree->root == NULL) {
+        return NULL;
+    }
+
+    TreeNode* node = tree->root;
+    while (node != NULL) {
+        int cmp = tree->lower_than(key, node->pair->key);
+        if (cmp < 0) {
+            node = node->left;
+        } else if (cmp > 0) {
+            node = node->right;
+        } else {
+            tree->current = node;
+            return node->pair;
+        }
+    }
+
+    return NULL;
+}
+Nota: En este caso, se asume que la estructura Pair ya ha sido definida en algún otro lugar del código.
+
+
+
+
+
+
     return NULL;
 }
 
