@@ -77,7 +77,22 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   if (tree == NULL || tree->root == NULL) {
         return NULL;
     }
-
+    tree->current = tree->root;
+    while (tree->current != NULL) {
+        // Compara la clave del nodo actual con la clave buscada usando la función de comparación
+        int cmp = tree->lower_than(key, tree->current->key);
+        if (cmp == 0) {
+            // Si las claves son iguales, se encontró el nodo buscado
+            return tree->current->value;
+        } else if (cmp < 0) {
+            // Si la clave buscada es menor, se mueve al subárbol izquierdo
+            tree->current = tree->current->left;
+        } else {
+            // Si la clave buscada es mayor, se mueve al subárbol derecho
+            tree->current = tree->current->right;
+        }
+    }
+  
     
 
   return NULL;
