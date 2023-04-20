@@ -80,10 +80,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     return NULL;
   }
   TreeNode* nodo = tree->root;
-  int comparacion = tree->lower_than(key,nodo->pair->key);
   
   while(nodo != NULL)
   {
+    int comparacion = tree->lower_than(key,nodo->pair->key);
     if(comparacion < 0)
     {
       nodo = nodo->left;
