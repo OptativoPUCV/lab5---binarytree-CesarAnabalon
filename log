@@ -81,3 +81,14 @@ treemap.c:86:33: error: ‘TreeNode’ has no member named ‘value’
       |                                 ^~
 Compilation failed
 783b937
+Thu 20 Apr 2023 07:45:30 PM UTC: 
+ treemap.c | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:80:13: error: unused variable ‘nodo’ [-Werror=unused-variable]
+   80 |   TreeNode* nodo = tree->root;
+      |             ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9149867
