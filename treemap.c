@@ -94,6 +94,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       nodo = nodo->right;
     }else{
       tree->current = nodo;
+      tree->current = NULL;
       return nodo->pair;
     }
   }
