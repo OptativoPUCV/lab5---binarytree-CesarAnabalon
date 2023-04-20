@@ -92,14 +92,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     }
 
     return NULL;
-}
-Nota: En este caso, se asume que la estructura Pair ya ha sido definida en algún otro lugar del código.
-
-
-
-
-
-
     return NULL;
 }
 
