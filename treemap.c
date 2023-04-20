@@ -70,9 +70,6 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 }
 
-
-
-
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
   if (tree == NULL || tree->root == NULL) 
@@ -92,11 +89,15 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     else if(comparacion > 0)
     {
       nodo = nodo->right;
-    }else{
-      tree->current = nodo;
-      return nodo->pair;
     }
-  else
+    else
+    {
+      if (nodo->pair->key == key)
+      {
+        tree->current = nodo;
+        return nodo->pair;
+      }
+      else
       {
         tree->current = NULL;
         return NULL;
@@ -106,11 +107,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   
   return NULL;
 }
-
-
-
-
-
 
 Pair * upperBound(TreeMap * tree, void* key) {
     return NULL;
