@@ -84,6 +84,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   while(nodo != NULL)
   {
     int comparacion = tree->lower_than(key,nodo->pair->key);
+    
     if(comparacion < 0)
     {
       nodo = nodo->left;
@@ -96,7 +97,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       return nodo->pair;
     }
   }
-  
+  tree->current = NULL;
   return NULL;
 }
 
