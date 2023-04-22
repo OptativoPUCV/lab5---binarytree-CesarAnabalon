@@ -211,7 +211,6 @@ Pair * nextTreeMap(TreeMap * tree)
         }
         result = current->pair;
     }
-    // Caso 2: no hay un subárbol derecho
     else {
         TreeNode * parent = current->parent;
         while (parent != NULL && current == parent->right) {
@@ -223,7 +222,6 @@ Pair * nextTreeMap(TreeMap * tree)
         }
     }
     
-    // Actualizar el puntero current
     if (result != NULL) {
         tree->current = current;
     }
