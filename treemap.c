@@ -203,7 +203,6 @@ Pair * nextTreeMap(TreeMap * tree)
     Pair * result = NULL;
     TreeNode * current = tree->current;
     
-    // Caso 1: hay un subárbol derecho
     if (current->right != NULL) {
         current = current->right;
         while (current->left != NULL) {
