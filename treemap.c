@@ -82,15 +82,22 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
 
 TreeNode * minimum(TreeNode * x){
 if (x == NULL) return NULL; 
-    while (x->left != NULL) { 
-        x = x->left;
-    }
-    return x;
+  while (x->left != NULL) 
+  { 
+       x = x->left;
+  }
+  return x;
 }
 
 
-void removeNode(TreeMap * tree, TreeNode* node) {
-
+void removeNode(TreeMap * tree, TreeNode* node) 
+{
+  TreeNode* actual = tree->root;
+  TreeNode* nodoBuscado = searchTreeMap(tree, node->pair->key);
+  while(actual != NULL)
+    {
+      if()
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){

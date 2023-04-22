@@ -380,3 +380,20 @@ Sat 22 Apr 2023 02:13:07 PM UTC:
  tests:  15|4
 total_score: 25/70
 26b92b7
+Sat 22 Apr 2023 04:43:04 PM UTC: 
+ treemap.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:96:27: error: initialization of ‘TreeNode *’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+   96 |   TreeNode* nodoBuscado = searchTreeMap(tree, node->pair->key);
+      |                           ^~~~~~~~~~~~~
+treemap.c:99:10: error: expected expression before ‘)’ token
+   99 |       if()
+      |          ^
+treemap.c:96:13: error: unused variable ‘nodoBuscado’ [-Werror=unused-variable]
+   96 |   TreeNode* nodoBuscado = searchTreeMap(tree, node->pair->key);
+      |             ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a7b4fce
