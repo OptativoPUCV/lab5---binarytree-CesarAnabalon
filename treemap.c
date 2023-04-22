@@ -196,26 +196,38 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree)
 {
-  if(tree == NULL || tree->root == NULL) return NULL;
-
-  if(tree->current->right != NULL)
-  {
-    TreeNode* actual = tree->root;
-    while(actual->left != NULL)
-    {
-      actual = actual->left;
+  if (tree == NULL || tree->root == NULL) {
+        return NULL;
     }
-    tree->current = actual;
-    return actual->pair;
-  }
-  TreeNode* actual = tree->current;
-    while (actual->parent != NULL && actual == actual->parent->right) {
-        actual = actual->parent;
+    
+    Pair * result = NULL;
+    TreeNode * current = tree->current;
+    
+    // Caso 1: hay un subárbol derecho
+    if (current->right != NULL) {
+        current = current->right;
+        while (current->left != NULL) {
+            current = current->left;
+        }
+        result = current->pair;
     }
-
-    // Actualizar el puntero current del mapa
-    tree->current = actual->parent;
-
-  return actual->parent != NULL ? actual->parent->pair : NULL;
+    // Caso 2: no hay un subárbol derecho
+    else {
+        TreeNode * parent = current->parent;
+        while (parent != NULL && current == parent->right) {
+            current = parent;
+            parent = parent->parent;
+        }
+        if (parent != NULL) {
+            result = parent->pair;
+        }
+    }
+    
+    // Actualizar el puntero current
+    if (result != NULL) {
+        tree->current = current;
+    }
+    
+    return result;
 
 }
