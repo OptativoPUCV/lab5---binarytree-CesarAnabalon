@@ -220,6 +220,5 @@ Pair * nextTreeMap(TreeMap * tree)
 
   tree->current = ancestro;
   if (ancestro != NULL) return ancestro->pair;
-  else return NULL;
   
 }
