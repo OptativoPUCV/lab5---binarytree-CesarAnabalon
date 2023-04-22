@@ -92,13 +92,11 @@ if (x == NULL) return NULL;
 
 void removeNode(TreeMap * tree, TreeNode* node) 
 {
-  TreeNode* actual = tree->root;
-  
-  TreeNode* nodoBuscado->pair = searchTreeMap(tree, node->pair->key);
-  while(actual != NULL)
-    {
-      if()
-    }
+  //caso 1 nodo sin hijos
+  if(node->left == NULL && node->right == NULL)
+  {
+    
+  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
