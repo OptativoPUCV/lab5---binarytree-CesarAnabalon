@@ -112,7 +112,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
   }
 
   //caso 2 con un hijoooo
-  if(node->left == NULL && node->right == NULL)
+  if(node->left == NULL || node->right == NULL)
   {
     TreeNode* aux = node->left != NULL ? node->left : node->right;
     if(node->parent != NULL)
@@ -130,6 +130,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
     free(node);
     return;
   }
+  
   // caso 3 con dos hijoo
   TreeNode* ultimoNodo = minimum(node->right);
   node->pair->key = ultimoNodo->pair->key;
