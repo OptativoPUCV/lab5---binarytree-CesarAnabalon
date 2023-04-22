@@ -234,7 +234,7 @@ Pair * nextTreeMap(TreeMap * tree)
        actual = actual->left;   
     }
     
-    nodo= actual;
+    nodo = actual->pair;
     
   }else{
     TreeNode* tata = actual->parent;

@@ -650,3 +650,9 @@ treemap.c:237:9: error: assignment to ‘Pair *’ from incompatible pointer typ
 cc1: all warnings being treated as errors
 Compilation failed
 fc9b076
+Sat 22 Apr 2023 08:38:38 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  24|1
+total_score: 55/70
+94c9e77
