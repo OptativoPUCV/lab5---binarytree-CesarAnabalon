@@ -93,7 +93,8 @@ if (x == NULL) return NULL;
 void removeNode(TreeMap * tree, TreeNode* node) 
 {
   TreeNode* actual = tree->root;
-  TreeNode* nodoBuscado = searchTreeMap(tree, node->pair->key);
+  
+  TreeNode* nodoBuscado->pair = searchTreeMap(tree, node->pair->key);
   while(actual != NULL)
     {
       if()
