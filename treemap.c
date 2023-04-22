@@ -203,6 +203,7 @@ Pair * nextTreeMap(TreeMap * tree)
     Pair * result = NULL;
     TreeNode * current = tree->current;
     
+    // Caso 1: hay un subárbol derecho
     if (current->right != NULL) {
         current = current->right;
         while (current->left != NULL) {
@@ -210,6 +211,7 @@ Pair * nextTreeMap(TreeMap * tree)
         }
         result = current->pair;
     }
+    // Caso 2: no hay un subárbol derecho
     else {
         TreeNode * parent = current->parent;
         while (parent != NULL && current == parent->right) {
@@ -221,6 +223,7 @@ Pair * nextTreeMap(TreeMap * tree)
         }
     }
     
+    // Actualizar el puntero current
     if (result != NULL) {
         tree->current = current;
     }
