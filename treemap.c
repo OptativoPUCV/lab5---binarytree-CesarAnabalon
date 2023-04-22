@@ -208,5 +208,14 @@ Pair * nextTreeMap(TreeMap * tree)
     tree->current = actual;
     return actual->pair;
   }
-  return NULL;
+  TreeNode* actual = tree->current;
+    while (actual->parent != NULL && actual == actual->parent->right) {
+        actual = actual->parent;
+    }
+
+    // Actualizar el puntero current del mapa
+    tree->current = actual->parent;
+
+  return actual->parent != NULL ? actual->parent->pair : NULL;
+
 }
