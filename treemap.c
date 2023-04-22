@@ -79,6 +79,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   //is equal para saber si es igual o no 
 
   if(tree == NULL ) return NULL;
+  TreeNode *current = tree->root;
   while (current != NULL) {
         if (is_equal(tree, current->pair->key, key)) {
             tree->current = current;
