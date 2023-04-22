@@ -67,15 +67,15 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
     actual = actual->right;
   }
   TreeNode* new_node = createTreeNode(key, value);
-  new_node->parent = parent;
+  new_node->parent = pariente;
 
-  if (parent == NULL) {
+  if (pariente == NULL) {
     // El árbol estaba vacío, establecer la raíz
     tree->root = new_node;
-  } else if (tree->lower_than(key, parent->pair->key)) {
-    parent->left = new_node;
+  } else if (tree->lower_than(key, pariente->pair->key)) {
+    pariente->left = new_node;
   } else {
-    parent->right = new_node;
+    pariente->right = new_node;
   }
 
   // Hacer que el current apunte al nuevo nodo
