@@ -231,9 +231,10 @@ Pair * nextTreeMap(TreeMap * tree)
        actual = actual->left;   
     }
     tree->current= actual;
+    
     return actual->pair;
   }
-/*
+
   TreeNode* tata = actual->parent;
   while (tata != NULL && actual == tata->right)
   {
@@ -245,5 +246,5 @@ Pair * nextTreeMap(TreeMap * tree)
   
   if (tata != NULL) return tata->pair;
   else return NULL;
-  */
+  
 }
