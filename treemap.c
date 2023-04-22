@@ -221,29 +221,28 @@ Pair * nextTreeMap(TreeMap * tree)
 {
   if(tree == NULL || tree-> root == NULL) return NULL;
   
-  TreeNode* actual = tree->root;
-  
-  if(actual ->right != NULL)
-  {
-    actual = actual->right;
-    
-    while(actual->left !=NULL)
-    {
-       actual = actual->left;   
-    }    
-  }else{
-    TreeNode* tata = actual->parent;
-    
-    while (tata != NULL && actual == tata->right)
-    {
-      actual = tata;
-      tata = tata->parent;
+  TreeNode* current = tree->current;
+
+    // If current node has a right subtree
+    if (current->right != NULL) {
+        // Go to the leftmost node in the right subtree
+        current = current->right;
+        while (current->left != NULL) {
+            current = current->left;
+        }
+    } else {
+        // If current node doesn't have a right subtree
+        TreeNode* parent = current->parent;
+        while (parent != NULL && current == parent->right) {
+            current = parent;
+            parent = parent->parent;
+        }
+        current = parent;
     }
 
-    actual = tata;
-  }
-  
-  tree->current = actual;
-  
-  return (actual != NULL) ? actual->pair : NULL;
+    // Update current node in the tree map
+    tree->current = current;
+
+    // Return the pair of the new current node
+    return (current != NULL) ? current->pair : NULL;
 }
