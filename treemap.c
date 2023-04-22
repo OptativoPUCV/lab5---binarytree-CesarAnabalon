@@ -48,36 +48,36 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2))
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) 
 {
-  TreeNode* current = tree->root;
-    TreeNode* parent = NULL;
-    while (current != NULL) {
-        parent = current;
-        if (is_equal(tree, key, current->pair->key)) {
-            // la clave ya existe, así que no insertamos nada
-            return;
-        } else if (tree->lower_than(key, current->pair->key)) {
-            current = current->left;
-        } else {
-            current = current->right;
-        }
-    }
-
-    // creamos un nuevo nodo con el par clave-valor
-    TreeNode* new_node = createTreeNode(key, value);
-
-    // lo enlazamos en la ubicación encontrada
-    new_node->parent = parent;
-    if (parent == NULL) {
-        // el árbol está vacío, así que el nuevo nodo es la raíz
-        tree->root = new_node;
-    } else if (tree->lower_than(key, parent->pair->key)) {
-        parent->left = new_node;
+  TreeNode* actual = tree->root;
+  TreeNode* nuevoHijo = NULL;
+  while (actual != NULL) 
+  {
+    nuevoHijo = actual;
+    if (is_equal(tree, key, actual->pair->key))
+    {
+      return;
+    } else if (tree->lower_than(key, actual->pair->key)) 
+    {
+      actual = actual->left;
     } else {
-        parent->right = new_node;
+        actual = actual->right;
     }
+  }
 
-    // hacemos que el current apunte al nuevo nodo
-    tree->current = new_node;
+  TreeNode* nodito = createTreeNode(key, value);
+
+  nodito->parent = nuevoHijo;
+  if (nuevoHijo == NULL) {
+        tree->root = nodito;
+  } else if (tree->lower_than(key, nuevoHijo->pair->key)) 
+    {
+        nuevoHijo->left = nodito;
+    } else 
+    {
+      nuevoHijo->right = nodito;
+    }
+  
+  tree->current = nodito;
 }
 
 TreeNode * minimum(TreeNode * x){
