@@ -353,3 +353,9 @@ Sat 22 Apr 2023 02:07:34 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 56ff4a6
+Sat 22 Apr 2023 02:08:37 PM UTC: 
+ treemap.c | 22 ----------------------
+ 1 file changed, 22 deletions(-)
+ tests:  13|5
+total_score: 15/70
+feb6e7a
