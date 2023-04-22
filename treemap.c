@@ -250,9 +250,10 @@ Pair * nextTreeMap(TreeMap * tree)
       nodo = tata->pair;
     }
   }
-  tree->current = actual;
+  if(nodo != NULL)
+  {
+    tree->current = actual;
+  }
+  
   return nodo;
-  
-  
-  
 }
