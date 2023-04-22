@@ -75,7 +75,20 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
-  
+  //lowerthan para saber si ir por izquierda o derecha 
+  //is equal para saber si es igual o no 
+
+  if(tree == NULL ) return NULL;
+  while (current != NULL) {
+        if (is_equal(tree, current->pair->key, key)) {
+            tree->current = current;
+            return current->pair;
+        } else if (tree->lower_than(key, current->pair->key)) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
   return NULL;
 }
 
